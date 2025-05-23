@@ -1,20 +1,31 @@
+// components/HeroBanner.jsx
+
+import Link from 'next/link';
+
 export default function HeroBanner() {
   return (
-    <section className="bg-gradient-to-br from-blue-800 via-purple-800 to-gray-900 text-white py-24 px-6 flex flex-col items-center justify-center text-center min-h-[60vh]">
-      <h1 className="text-5xl md:text-7xl font-extrabold mb-6 drop-shadow-lg">
-        Hi, I'm William Zade
+    <section className="bg-frost-100 text-midnight font-sans py-16 px-6 flex flex-col items-center text-center shadow-md rounded-b-3xl">
+      <h1 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+        HoarFrost
       </h1>
-      <p className="text-xl md:text-2xl max-w-2xl mb-8">
-        Software Developer, Music Creator, and Creative Technologist.
-        <br />
-        Explore my work, music, and more!
+      <p className="text-xl md:text-2xl mb-6 max-w-2xl">
+        Forged in the North, shaped by resilience.<br />
+        Ambient doom blues and software from the edge of the world.
       </p>
-      <a
-        href="/projects"
-        className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition"
-      >
-        View My Projects
-      </a>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link
+          href="/projects"
+          className="bg-ember text-midnight font-semibold px-6 py-3 rounded shadow hover:bg-frost-500 hover:text-ember transition"
+        >
+          View My Work
+        </Link>
+        <Link
+          href="/contact"
+          className="border-2 border-ember text-ember font-semibold px-6 py-3 rounded hover:bg-ember hover:text-midnight transition"
+        >
+          Contact Me
+        </Link>
+      </div>
     </section>
   );
 }
