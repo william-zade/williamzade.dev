@@ -12,13 +12,13 @@ export default function Home() {
       <NavBar />
       <HeroBanner />
       {/* Social/professional links under hero */}
-      <SocialLinks />
+      {/*<SocialLinks /> */}
       {/* Featured projects preview */}
-      <FeaturedProjects />
+      {/* <FeaturedProjects /> */}
       {/* About Me teaser */}
       <AboutTeaser />
       {/* Music spotlight (optional) */}
-      <MusicSpotlight />
+      {/* <MusicSpotlight /> */}
       {/* Call to action banner */}
       <section className="bg-blue-700 text-white text-center py-8 my-8 rounded-lg shadow-lg mx-4">
         <h2 className="text-2xl font-bold mb-2">Interested in working together?</h2>
