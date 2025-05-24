@@ -2,15 +2,26 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import AboutTeaser from './AboutTeaser'; // Make sure this path is correct
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
-    <nav className="bg-midnight text-frost-100 px-6 py-4 flex items-center justify-between shadow-lg font-sans">
-      {/* Brand/Logo */}
-      <div className="font-bold text-2xl tracking-tight text-frost-50">
-        <Link href="/">HoarFrost</Link>
+    <nav className="bg-midnight text-frost-100 px-6 py-4 flex items-center justify-between shadow-lg font-sans relative">
+      {/* Brand/Logo with About Me popover */}
+      <div
+        className="font-bold text-2xl tracking-tight text-frost-50 relative"
+        onMouseEnter={() => setAboutOpen(true)}
+        onMouseLeave={() => setAboutOpen(false)}
+      >
+        <Link href="/">William Zade</Link>
+        {aboutOpen && (
+          <div className="absolute left-0 top-full mt-2 z-50">
+            <AboutTeaser />
+          </div>
+        )}
       </div>
       {/* Desktop navigation */}
       <div className="hidden md:flex space-x-6 items-center">

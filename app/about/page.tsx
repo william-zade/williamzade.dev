@@ -22,6 +22,7 @@ export default function About() {
       <h2 className="text-2xl font-semibold mb-2">Who I Am</h2>
       <p className="mb-6">
         I’m William Zade, a developer and open source enthusiast passionate about building scalable, beautiful web experiences. My work blends technology, design, and storytelling, with a focus on FOSS tools and personal branding.
+        Other stuff about me to know, I'm a combat veteran of the Marines and the Army, a dedicated husband, and a father to four wonderful children.
       </p>
       <h2 className="text-2xl font-semibold mb-2">What I Do Here</h2>
       <p>
