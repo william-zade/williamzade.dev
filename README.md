@@ -116,3 +116,52 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+Recommended Git Workflow for Your Project
+1. Use Feature Branches
+Create a new branch for each feature or fix:
+
+bash
+git checkout -b feature/your-feature-name
+This keeps your main branch clean and stable.
+
+2. Commit Often with Clear Messages
+Make small, focused commits.
+
+Use descriptive messages explaining why you made changes:
+
+bash
+git commit -m "Fix form validation on login page"
+This helps track changes and eases code review.
+
+3. Keep Branches Up-to-Date
+Regularly sync your feature branch with main to avoid conflicts:
+
+bash
+git fetch origin
+git rebase origin/main
+Rebasing keeps history linear and clean.
+
+4. Use Pull Requests (PRs) Even Solo
+Use PRs to merge feature branches into main.
+
+This encourages reviewing your own changes and maintaining quality.
+
+You can also use PRs to trigger automated tests or deployments if set up.
+
+5. Clean Up Merged Branches
+After merging, delete feature branches locally and remotely:
+
+bash
+git branch -d feature/your-feature-name
+git push origin --delete feature/your-feature-name
+Keeps your repo tidy and manageable.
+
+Additional Tips
+Consider GitHub Flow if you want a simple, continuous delivery-friendly workflow: branch off main, open PRs, merge after review, deploy immediately.
+
+For more complex release cycles, GitFlow or OneFlow workflows can be used, but they add overhead.
+
+Always use SSH keys or personal access tokens for secure authentication, as you’ve set up.
+
