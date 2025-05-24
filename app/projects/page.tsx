@@ -1,20 +1,6 @@
-// app/about/page.tsx
-"use client";
-
-import { useRouter } from "next/navigation";
-
 export default function About() {
-  const router = useRouter();
-
   return (
     <main className="max-w-2xl mx-auto py-12 px-4">
-      <button
-        onClick={() => router.back()}
-        className="mb-6 px-4 py-2 rounded bg-frost-100 text-midnight hover:bg-frost-200 transition font-semibold"
-        aria-label="Go back"
-      >
-        ← Back
-      </button>
       <h1 className="text-3xl font-bold mb-4">About This Site</h1>
       <p className="mb-6">
         Welcome to my personal portfolio! This portal showcases my projects, skills, and creative journey as a developer and designer.
