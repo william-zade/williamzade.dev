@@ -1,26 +1,27 @@
-// tailwind.config.js
-
 /** @type {import('tailwindcss').Config} */
-const config = {
+module.exports = {
   content: [
-    "./app/**/*.{ts,tsx}",
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
+    './app/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
       colors: {
-        background: "#0f0f11",
-        card: "#1a1a1e",
-        accent: "#5c7cfa",
-        muted: "#9ca3af",
+        midnight: '#1B1B1B',
+        ember: '#E24B1A',
+        frost: {
+          100: '#D8DEE9',
+          500: '#88C0D0',
+          800: '#2E3440',
+        },
+        steel: '#4C566A',
+        bone: '#ECEFF4',
       },
       fontFamily: {
-        sans: ["InterVariable", "sans-serif"],
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
       },
     },
   },
   plugins: [],
 };
-
-module.exports = config;

@@ -2,50 +2,45 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import AboutTeaser from './AboutTeaser';
+import AboutTeaser from './AboutTeaser'; // adjust if path changes
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
 
   return (
-    <nav className="bg-obsidian text-chalk px-6 py-4 flex items-center justify-between shadow-neo font-press relative z-50">
-      {/* Logo / About */}
+    <nav className="bg-midnight text-frost-100 px-6 py-4 flex items-center justify-between shadow-lg font-sans relative z-50">
+      {/* Logo + About Hover */}
       <div
-        className="text-xl tracking-wide text-chalk hover:text-retro transition duration-300 cursor-pointer"
+        className="font-bold text-2xl tracking-tight text-frost-50 relative cursor-pointer"
         onMouseEnter={() => setAboutOpen(true)}
         onMouseLeave={() => setAboutOpen(false)}
       >
         <Link href="/">William Zade</Link>
         {aboutOpen && (
-          <div className="absolute left-0 top-full mt-2 z-50 animate-slideIn">
+          <div className="absolute left-0 top-full mt-2 z-50">
             <AboutTeaser />
           </div>
         )}
       </div>
 
-      {/* Desktop Nav */}
-      <div className="hidden md:flex space-x-6 items-center text-base">
-        {['about', 'projects', 'personal', 'music', 'store'].map((page) => (
-          <Link
-            key={page}
-            href={`/${page}`}
-            className="hover:text-retro transition duration-200 hover:animate-pulseSlow"
-          >
-            {page.charAt(0).toUpperCase() + page.slice(1)}
-          </Link>
-        ))}
-
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex gap-6 items-center text-sm tracking-wide uppercase">
+        <Link href="/about" className="hover:text-ember transition">About</Link>
+        <Link href="/projects" className="hover:text-ember transition">Projects</Link>
+        <Link href="/personal" className="hover:text-ember transition">Personal</Link>
+        <Link href="/music" className="hover:text-ember transition">Music</Link>
+        <Link href="/store" className="hover:text-ember transition">Store</Link>
         <Link href="/contact">
-          <button className="bg-retro hover:bg-slateblue text-obsidian px-4 py-2 rounded shadow-neo font-bold uppercase tracking-wider transition-all duration-300">
-            Start
+          <button className="bg-ember hover:bg-frost-500 text-midnight px-4 py-2 rounded font-semibold transition">
+            Contact
           </button>
         </Link>
       </div>
 
-      {/* Mobile Menu Button */}
+      {/* Mobile Hamburger */}
       <button
-        className="md:hidden flex items-center text-chalk"
+        className="md:hidden flex items-center"
         onClick={() => setMenuOpen(!menuOpen)}
         aria-label="Toggle navigation"
       >
@@ -54,7 +49,6 @@ export default function NavBar() {
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             strokeLinecap="round"
@@ -65,22 +59,22 @@ export default function NavBar() {
         </svg>
       </button>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu */}
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-obsidian text-chalk flex flex-col items-center space-y-2 py-4 md:hidden shadow-xl animate-slideIn">
-          {['about', 'projects', 'personal', 'music', 'store'].map((page) => (
+        <div className="absolute top-16 left-0 w-full bg-midnight flex flex-col items-center gap-4 py-6 md:hidden z-40 text-sm tracking-wide uppercase">
+          {['/about', '/projects', '/personal', '/music', '/store'].map((href) => (
             <Link
-              key={page}
-              href={`/${page}`}
-              className="hover:text-retro transition duration-200"
+              key={href}
+              href={href}
+              className="hover:text-ember transition"
               onClick={() => setMenuOpen(false)}
             >
-              {page.charAt(0).toUpperCase() + page.slice(1)}
+              {href.replace('/', '')}
             </Link>
           ))}
           <Link href="/contact" onClick={() => setMenuOpen(false)}>
-            <button className="bg-retro hover:bg-slateblue text-obsidian px-4 py-2 rounded shadow-neo font-bold uppercase tracking-wider">
-              Start
+            <button className="bg-ember hover:bg-frost-500 text-midnight px-4 py-2 rounded font-semibold transition">
+              Contact
             </button>
           </Link>
         </div>
